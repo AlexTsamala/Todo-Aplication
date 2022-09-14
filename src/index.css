@@ -1,13 +1,268 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Josefin Sans";
+}
+body{
+  background-color: #171823;
+  overflow: hidden;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  background-image: url(./assets/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+  height:300px;
+  padding-top:70px;
+  width:100%;
+}
+.top-of-header{
+  display: flex;
+  gap: 335px;
+  align-items: center;
+}
+.header h1{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 15px;
+  color:#ffffff;
+  margin-top:5px;
+}
+.todo-textArea{
+  height: 64px;
+  width: 540px;
+  border-radius: 5px;
+  background-color:#25273D;
+  border:none;
+  resize: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 24px;
+  gap: 24px;
+}
+.text-section{
+  height: 100%;
+  width: 100%;
+  background-color: #25273D;
+  border: none;
+  color:#C8CBE7;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  border-radius: 5px;
+  outline: none;
+  padding-right:20px;
+}
+.text-section::placeholder{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color:#767992;
+}
+/* checkBox styles */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 26px;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox-background-div{
+  width:27px;
+  height:27px;
+  border-radius: 50%;
+  position: relative;
+}
+.checkbox-background-div-1:hover{
+  background-image: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+}
+/* Create a custom checkbox */
+.checkMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: #25273D;
+  border-radius: 50%;
+  border: 0.1px solid #767992;
+  transform: translate(-65%,4.5%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkMark {
+  border: 1px solid linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
 }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkMark {
+  background-image: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+}
+
+/* Create the checkMark/indicator (hidden when not checked) */
+.checkMark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkMark when checked */
+.container input:checked ~ .checkMark:after {
+  display: block;
+}
+
+/* Style the checkMark/indicator */
+.container .checkMark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* todoList */
+.todo-list-container{
+  padding-bottom: 20px;
+  background-color:#25273D;
+  box-shadow: 0px 35px 50px -15px rgb(0 0 0 / 50%);
+  border-radius: 5px;
+  transform: translateY(-40px);
+  width: 540px;
+}
+.todo-list-footer{
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between;
+  margin:16px 24px 0;
+}
+.number-of-item{
+  margin-right:5px;
+}
+.items-left{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.2px;
+  color:#5B5E7E;
+}
+.lists-parent-style{
+  list-style:none;
+  max-height: 389px;
+  overflow-x: auto;
+}
+.lists-bottom-line{
+  height: 1px;
+  width: 100%;
+  border:none;
+  background-color: #393A4B;
+  margin-top: 20px;
+}
+.lists-style{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color:#C8CBE7;
+  padding-left: 24px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.false-text-style{
+  text-decoration: line-through;
+}
+.list-parent-div{
+  display: flex;
+  align-items: center;
+  gap:24px;
+}
+.x-style{
+  display: none;
+  margin-right:24px;
+}
+.lists-style:hover .x-style{
+  display: block;
+  cursor: pointer;
+}
+.footer-buttons{
+  cursor: pointer;
+  background-color: #25273D;
+  border: none;
+  color:#5B5E7E;
+}
+.active-button{
+  margin:0 20px;
+}
+.active-status{
+  color:#3A7CFD;
+}
+.drag-drop-style{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color:#5B5E7E;
+  margin-top:-10px;
+}
+.footer-buttons:hover{
+  color:#E3E4F1;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #C8CBE7; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%); 
+}
+
+
