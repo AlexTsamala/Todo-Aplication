@@ -3,9 +3,7 @@ const CheckBox = (props) => {
     const [status,setStatus] = useState(props.status);
     const clickHandle = () =>{
         setStatus(!status);
-        if(props.statusHandler){
-            props.statusHandler()
-        }
+        props.statusHandler(props.id,status)
     }
     return (
         <div className="list-parent-div">

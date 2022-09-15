@@ -22,6 +22,17 @@ function App () {
     const clearCompleted = () => {
         setTodoList(active)
     }
+    
+    const statusHandler = async (id,status) =>{
+        const newItemsList = todoList.slice();
+        const clickedItem = newItemsList.find( (item) => item.id===id );
+        clickedItem.status = !status;
+        setTodoList(newItemsList);
+        const response = await axios.put("http://localhost:4001/change-status/"+id,{
+            status: status,
+            });
+            console.log(response)
+    }
 
     const filterHandler = (status) => {
         setFilterText(status)
@@ -36,7 +47,7 @@ function App () {
     return(
         <div className='main-container'>
             <Header addList={addList}/>
-            <TodoList clearCompleted={clearCompleted} filterHandler={filterHandler}  todoList={filterText === "active"? active : filterText ==="completed" ? notActive : todoList} deleteList={deleteList}/>
+            <TodoList statusHandler={statusHandler} clearCompleted={clearCompleted} filterHandler={filterHandler}  todoList={filterText === "active"? active : filterText ==="completed" ? notActive : todoList} deleteList={deleteList}/>
             <span className='drag-drop-style'>Drag and drop to reorder list</span>
         </div>
     );
