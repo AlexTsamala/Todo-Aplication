@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 function App () {
     const [todoList,setTodoList] = useState([]);
     const [filterText,setFilterText] = useState("all");
+    const [darkMode,setDarkMode] = useState(true)
     const active = todoList.filter( (item) => !item.status);
     const notActive = todoList.filter( (item) => item.status);
     
@@ -45,10 +46,10 @@ function App () {
     }, [])
     
     return(
-        <div className='main-container'>
-            <Header addList={addList}/>
-            <TodoList statusHandler={statusHandler} clearCompleted={clearCompleted} filterHandler={filterHandler}  todoList={filterText === "active"? active : filterText ==="completed" ? notActive : todoList} deleteList={deleteList}/>
-            <span className='drag-drop-style'>Drag and drop to reorder list</span>
+        <div className={`main-container ${darkMode ? "main-container-light" :""}`}>
+            <Header darkMode={darkMode} darkModeFunction={setDarkMode} addList={addList}/>
+            <TodoList darkMode={darkMode} statusHandler={statusHandler} clearCompleted={clearCompleted} filterHandler={filterHandler}  todoList={filterText === "active"? active : filterText ==="completed" ? notActive : todoList} deleteList={deleteList}/>
+            <span className={`drag-drop-style ${darkMode ? "drag-drop-style-light" :""}`}>Drag and drop to reorder list</span>
         </div>
     );
 } 
