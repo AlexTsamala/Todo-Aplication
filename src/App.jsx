@@ -2,6 +2,7 @@ import axios from 'axios';
 import Header from './header';
 import TodoList from './TodoList';
 import { useEffect, useState } from 'react';
+import ThreeButton from './ThreeButton';
 function App () {
     const [todoList,setTodoList] = useState([]);
     const [filterText,setFilterText] = useState("all");
@@ -49,6 +50,7 @@ function App () {
         <div className={`main-container ${darkMode ? "main-container-light" :""}`}>
             <Header darkMode={darkMode} darkModeFunction={setDarkMode} addList={addList}/>
             <TodoList darkMode={darkMode} statusHandler={statusHandler} clearCompleted={clearCompleted} filterHandler={filterHandler}  todoList={filterText === "active"? active : filterText ==="completed" ? notActive : todoList} deleteList={deleteList}/>
+            <ThreeButton className={`all-active-completed-section-mobile ${ darkMode ? "":"all-active-completed-section-mobile-dark"}`} filterHandler={filterHandler} darkMode={darkMode}/>
             <span className={`drag-drop-style ${darkMode ? "drag-drop-style-light" :""}`}>Drag and drop to reorder list</span>
         </div>
     );

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-
 *{
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +18,7 @@ body{
 .header{
   background-image: url(./assets/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: -359px 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -33,11 +32,11 @@ body{
 }
 .top-of-header{
   display: flex;
-  gap: 335px;
+  gap: 140px;
   align-items: center;
 }
 .header h1{
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 15px;
@@ -46,7 +45,7 @@ body{
 }
 .todo-textArea{
   height: 64px;
-  width: 540px;
+  width: 86%;
   border-radius: 5px;
   background-color:#25273D;
   border:none;
@@ -63,18 +62,18 @@ body{
   background-color: #25273D;
   border: none;
   color:#C8CBE7;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 12px;
   letter-spacing: -0.25px;
   border-radius: 5px;
   outline: none;
   padding-right:20px;
 }
 .text-section::placeholder{
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 12px;
   letter-spacing: -0.25px;
   text-align: left;
   color:#767992;
@@ -163,19 +162,20 @@ body{
   box-shadow: 0px 35px 50px -15px rgb(0 0 0 / 50%);
   border-radius: 5px;
   transform: translateY(-40px);
-  width: 540px;
+  width: 86%;
 }
 .todo-list-footer{
   display: flex;
   margin-top: auto;
   justify-content: space-between;
   margin:16px 24px 0;
+  gap: 125px;
 }
 .number-of-item{
   margin-right:5px;
 }
 .items-left{
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: -0.2px;
@@ -194,9 +194,9 @@ body{
   margin-top: 20px;
 }
 .lists-style{
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 12px;
   letter-spacing: -0.25px;
   text-align: left;
   color:#C8CBE7;
@@ -213,6 +213,22 @@ body{
   display: flex;
   align-items: center;
   gap:24px;
+}
+.all-active-completed-section{
+  display: none;
+}
+.all-active-completed-section-mobile{
+  display: block;
+  width: 86%;
+  background-color: #ffffff;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  box-shadow: 0px 35px 50px -15px rgb(194 195 214 / 50%);
+  border-radius: 5px;
+  z-index: 1;
 }
 .x-style{
   display: none;
@@ -231,22 +247,15 @@ body{
 .footer-buttons:hover{
   color:#E3E4F1;
 }
-.active-button{
-  margin:0 20px;
-}
 .drag-drop-style{
   font-size: 14px;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 12px;
   letter-spacing: -0.2px;
   text-align: center;
   color:#5B5E7E;
   margin-top: 25px;
 }
-.footer-buttons:hover{
-  color:#494C6B;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 20px;
@@ -275,6 +284,182 @@ body{
 }
 .header-light{
   background-image: url(./assets/bg-desktop-light.jpg);
+  background-position: -487px 0px;
+}
+.todo-textArea-light{
+  background-color:#ffffff;
+}
+.text-section-light{
+  background-color: #ffffff;
+  color:#393A4B;
+}
+.checkMark-light{
+  background-color: #ffffff;
+  border: 0.1px solid #767992;
+}
+.todo-list-container-light{
+  background-color:#ffffff;
+}
+.lists-bottom-line-light{
+  background-color: #E3E4F1;
+}
+.lists-style-light{
+  color:#494C6B;
+}
+.all-active-completed-section-mobile-dark{
+  background-color: #25273D;
+  box-shadow: 0px 35px 50px -15px rgb(0 0 0 / 50%);
+}
+.footer-buttons-light{
+  background-color: #ffffff;
+  color:#9495A5;
+}
+.items-left-light{
+  color:#9495A5;
+}
+.drag-drop-style-light{
+  color:#9495A5;
+}
+.active-status{
+  color:#3A7CFD;
+}
+@media (min-width:1440px) {
+.header{
+  background-image: url(./assets/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+  height:300px;
+  padding-top:70px;
+  width:100%;
+}
+.top-of-header{
+  display: flex;
+  gap: 335px;
+  align-items: center;
+}
+.header h1{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 15px;
+  color:#ffffff;
+  margin-top:5px;
+}
+.todo-textArea{
+  height: 64px;
+  width: 540px;
+  border-radius: 5px;
+  background-color:#25273D;
+  border:none;
+  resize: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 24px;
+  gap: 24px;
+}
+.text-section{
+  height: 100%;
+  width: 100%;
+  background-color: #25273D;
+  border: none;
+  color:#C8CBE7;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  border-radius: 5px;
+  outline: none;
+  padding-right:20px;
+}
+.text-section::placeholder{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color:#767992;
+}
+/* todoList */
+.todo-list-container{
+  padding-bottom: 20px;
+  background-color:#25273D;
+  box-shadow: 0px 35px 50px -15px rgb(0 0 0 / 50%);
+  border-radius: 5px;
+  transform: translateY(-40px);
+  width: 540px;
+}
+.todo-list-footer{
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between;
+  margin:16px 24px 0;
+  gap:0;
+}
+.number-of-item{
+  margin-right:5px;
+}
+.items-left{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.2px;
+  color:#5B5E7E;
+}
+.lists-parent-style{
+  max-height: 389px;
+}
+.lists-style{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color:#C8CBE7;
+  padding-left: 24px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-parent-div{
+  display: flex;
+  align-items: center;
+  gap:24px;
+}
+.all-active-completed-section{
+  display: block;
+}
+.all-active-completed-section-mobile{
+  display: none;
+}
+.x-style{
+  display: none;
+  margin-right:24px;
+}
+.footer-buttons{
+  background-color: #25273D;
+  border: none;
+  color:#5B5E7E;
+}
+.active-button{
+  margin:0 20px;
+}
+.drag-drop-style{
+  margin-top: 10px;
+}
+/* DESKTOP LIGHT */
+.main-container-light{
+  background-color: #FAFAFA;
+}
+.header-light{
+  background-image: url(./assets/bg-desktop-light.jpg);
+  background-position: 0px 0px;
 }
 .todo-textArea-light{
   background-color:#ffffff;
@@ -300,6 +485,9 @@ body{
   background-color: #ffffff;
   color:#9495A5;
 }
+.footer-buttons-light:hover {
+  color: #494C6B;
+}
 .items-left-light{
   color:#9495A5;
 }
@@ -308,4 +496,5 @@ body{
 }
 .active-status{
   color:#3A7CFD;
+}
 }

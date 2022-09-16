@@ -1,8 +1,28 @@
 # Getting Started with Create React App
 
+## Table of contents
+-[How to run project](#How-to-run-project)
+  - [Available Scripts](#Available-Scripts)
+  - [`npm start`](#npm-start)
+  - [`npm test`](#npm-test)
+  - [`npm run build`](#npm-run-build)
+  - [`npm run eject`](#npm-run-eject)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to run project
+- this is mini project where customers can create, read, update and delete comments.Also they can do replies to others and then also delete and update this info.
+
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -39,32 +59,77 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Overview
+- This is a full stuck Todo application where customers can add todo list ,mark as done ,delete ,filter by all active complete and clear all completed todos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### The challenge
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Users should be able to:
 
-### Code Splitting
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Filter by all/active/complete todos
+- Clear all completed todos
+- Toggle light and dark mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## My process
 
-### Analyzing the Bundle Size
+### Built with
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Semantic HTML5 markup
+- CSS custom properties
+- React
+- Node.js
+- useState
+- responsive
+- useEffect
+- functions
+- hover
+- axios
+- Dom
+- Json
+- findIndex
+### What I learned
 
-### Making a Progressive Web App
+I learned 2 main thinks in web programming React and node.js.Also i learned how to use axios ,jsx, react functions,react hooks,postgresql,React components and http requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+```Javascript
+const [enter,setEnter] = useState("")
+    const enterButton = async (event) => {
+        if(event.keyCode === 13 && enter !== "") {
+            const response = await axios.post("http://localhost:4001", {
+                todoText: enter,
+                status: status,
+                });
+                console.log(response)
+                addList();
+                setEnter("");
+        }
+    }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Continued development
+ 
+It was most important project for me because i used React ,node.js and data base to build project .I am looking forward to learn tailwind to write css more easily and also learn how to attach node.js to server.
 
-### `npm run build` fails to minify
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Example resource 1](https://www.youtube.com/watch?v=gv9ugDJ1ynU&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=25) -Great tutorial to learn all important details in React.
+- [Example resource 2](https://www.w3schools.com/sql/sql_create_table.asp) - Learn how to write SQL orders; 
+
+## Author
+
+- Website - [Alexander Tsamalashvili](https://github.com/AlexTsamala)
+- Frontend Mentor - [Otar Zakalashvili](https://www.linkedin.com/in/otarza/)
+- Linkdin - [myLinkdin](https://www.linkedin.com/in/aleksandre-tsamalashvili-40501a1a0/)
+
+
+## Acknowledgments
+
+I got huge help from my mentors Nika Nozadze and Beka Zandukeli.
