@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 ## Table of contents
--[How to run project](#How-to-run-project)
+- [How to run project](#How-to-run-project)
   - [Available Scripts](#Available-Scripts)
   - [`npm start`](#npm-start)
   - [`npm test`](#npm-test)
