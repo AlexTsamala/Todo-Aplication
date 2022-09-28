@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ecommerce-product-page/static/css/main.f05fadb2.css",
+    "main.js": "/ecommerce-product-page/static/js/main.68512e1c.js",
+    "static/media/bg-desktop-light.jpg": "/ecommerce-product-page/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
+    "static/media/bg-desktop-dark.jpg": "/ecommerce-product-page/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
+    "index.html": "/ecommerce-product-page/index.html",
+    "main.f05fadb2.css.map": "/ecommerce-product-page/static/css/main.f05fadb2.css.map",
+    "main.68512e1c.js.map": "/ecommerce-product-page/static/js/main.68512e1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f05fadb2.css",
+    "static/js/main.68512e1c.js"
+  ]
+}
