@@ -1,9 +1,21 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { todoListActions } from "./store/slices";
+import axios from "axios";
+
 const CheckBox = (props) => {
     const [status,setStatus] = useState(props.status);
-    const clickHandle = () =>{
+    const dispatch = useDispatch();
+    const clickHandle = async () =>{
         setStatus(!status);
-        props.statusHandler(props.id,status)
+        if(!props.id){
+            props.statusHandler();
+        }else{
+        dispatch(todoListActions.updateTodoList(props.id))
+        await axios.put("http://localhost:4001/change-status/"+props.id,{
+            status: status,
+            });
+        }
     }
     return (
         <div className="list-parent-div">

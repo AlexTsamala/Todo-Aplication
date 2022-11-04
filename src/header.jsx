@@ -1,21 +1,24 @@
 import CheckBox from "./CheckBox";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { todoListActions } from "./store/slices";
+
+
 const Header = (props) => {
     const [status,setStatus] = useState(false);
-    const {addList} = props;
     const statusHandler = () =>{
         setStatus(!status);
     }
-    const [enter,setEnter] = useState("")
+    const [enter,setEnter] = useState("");
+    const dispatch = useDispatch();
     const enterButton = async (event) => {
         if(event.keyCode === 13 && enter !== "") {
-            const response = await axios.post("http://localhost:4001", {
+                const result = await axios.post("http://localhost:4001", {
                 todoText: enter,
                 status: status,
                 });
-                console.log(response)
-                addList();
+                dispatch(todoListActions.addInTodoList(result.data));
                 setEnter("");
         }
     }

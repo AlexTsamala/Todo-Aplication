@@ -1,10 +1,16 @@
 import React from "react";
 import CheckBox from "./CheckBox";
 import FooterTodo from "./FooterOfTodoList";
+import { useDispatch } from 'react-redux';
+import { todoListActions } from './store/slices';
+import axios from "axios";
+
 const TodoList = (props) => {
-    const {todoList,deleteList} = props;
-    const handleDelete = (id) =>{
-        deleteList(id);
+    const {todoList} = props;
+    const dispatch = useDispatch();
+    const handleDelete = async (id) =>{
+        await axios.delete("http://localhost:4001/delete-todo/"+id);
+        dispatch(todoListActions.deleteTodoList(id));
     }
     const filterHandler = (status) => {
         props.filterHandler(status)
@@ -17,7 +23,7 @@ const TodoList = (props) => {
                     return (   
                             <React.Fragment key={todoItem.id}>
                                 <li className={`lists-style ${props.darkMode ? "lists-style-light" :""}`}>
-                                    <CheckBox darkMode={props.darkMode} statusHandler={props.statusHandler} id={todoItem.id}  status={todoItem.status} text={todoItem.todolist}/>
+                                    <CheckBox darkMode={props.darkMode} id={todoItem.id}  status={todoItem.status} text={todoItem.todolist}/>
                                     <svg onClick={() => handleDelete(todoItem.id)} className="x-style" fillRule="evenodd" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                                         <path fill="#494C6B"  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/>
                                     </svg>

@@ -1,10 +1,13 @@
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { todoListActions } from "./store/slices";
 import ThreeButton from "./ThreeButton";
+
 const FooterTodo = (props) => {
+    const dispatch = useDispatch()
     const clearCompletedButtonHandler = async () =>{
-            const response = await axios.delete("http://localhost:4001/clear-completed/");
-            console.log(response);
-            props.clearCompleted();
+            const result = await axios.delete("http://localhost:4001/clear-completed/");
+            dispatch(todoListActions.clearCompletedTodoLists(result.data))
         }
     return ( 
         <div className="todo-list-footer">
